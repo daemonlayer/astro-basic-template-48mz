@@ -1,0 +1,62 @@
+content:
+  - name: blog
+    label: Blog Posts
+    path: src/content/blog
+    type: collection
+    view:
+      fields: [image, title, publishDate, category]
+    fields:
+      - name: draft
+        label: Draft
+        type: boolean
+        description: "Set to true to hide this post from the blog"
+        default: false
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: snippet
+        label: Snippet
+        type: text
+        description: "Short description or excerpt for the blog post"
+        required: true
+      - name: image
+        label: Featured Image
+        type: object
+        fields:
+          - name: src
+            label: Image URL
+            type: string
+            description: "URL to the image (can be external URL or path to local image)"
+            required: true
+          - name: alt
+            label: Alt Text
+            type: string
+            description: "Alternative text for the image"
+            required: true
+      - name: publishDate
+        label: Publish Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd HH:mm
+      - name: author
+        label: Author
+        type: string
+        default: "DaemonLayer"
+      - name: category
+        label: Category
+        type: string
+        required: true
+        description: "Blog post category (e.g., Analytics, MSP, Automation)"
+      - name: tags
+        label: Tags
+        type: list
+        description: "Add relevant tags for this post"
+      - name: body
+        label: Body
+        type: rich-text
+
+media:
+  input: public/media
+  output: /media

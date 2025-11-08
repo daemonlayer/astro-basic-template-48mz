@@ -1,0 +1,65 @@
+---
+import Badge from "@components/ui/badge.astro";
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Autotask Integration",
+    description:
+      "Active for pilot partners – supports ticket intake, triage, and automated password resets.",
+    icon: "fluent:flash-24-regular",
+    status: "Ready",
+  },
+  {
+    title: "ConnectWise & Smart Responses",
+    description:
+      "Next up – ConnectWise integration, intelligent ticket acknowledgement and first-response automation.",
+    icon: "fluent:plug-connected-24-regular",
+    status: "In Progress",
+  },
+  {
+    title: "Ecosystem Expansion",
+    description:
+      "Pax8, RMMs, Slack, Teams & more – deeper integration across the full MSP toolset.",
+    icon: "fluent:apps-24-regular",
+    status: "Planned",
+  },
+];
+
+---
+
+<!-- <div class="mt-16">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    We have got more awesome <span class="text-indigo-600">features</span>
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Use this section to highlight not so important features of your product.
+  </p>
+</div> -->
+<div class="mt-24 max-w-3xl mx-auto flex flex-col items-center justify-center">
+  <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+    Product Roadmap
+  </h2>
+  <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    We're building DaemonLayer in stages, starting with the most impactful automations and expanding based on MSP partner feedback.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-8 md:gap-16">
+  {
+    features.map((item) => (
+      <div class="flex flex-col gap-4 items-start group hover:bg-slate-50 hover:border-slate-100 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+        <div class="flex items-center justify-between w-full">
+          <div class="mt-1 bg-brand/10 border shadow shadow-brand/10 border-brand/20 transition-colors rounded-lg grid place-items-center  p-2 w-10 h-10 shrink-0">
+            <Icon class="text-brand" name={item.icon} size={24} />
+          </div>
+          <span class="text-xs font-normal px-2 py-1 bg-brand/10 text-brand rounded-full">{item.status}</span>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,155 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+import EmployeeImg from "../assets/employee.jpg";
+import KevinImg from "../assets/kevin-wright.jpeg";
+import RudyImg from "../assets/rudy-mens.jpg";
+import Logos from "@components/logos.astro";
+import { Icon } from "astro-icon/components";
+import Cta from "@components/cta.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="About" footerMargin={false}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Built by People Who've Lived the Problem</Fragment>
+      <Fragment slot="desc">
+        We've run operations and support teams inside MSPs, startups, and IT providers. We know the grind - the endless tickets, the missed SLAs, and the constant tool juggling.
+      </Fragment>
+    </Sectionhead>
+    <div class="mt-6 text-center">
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        DaemonLayer exists because we believe automation should serve engineers, not replace them. We're building a calmer, more intelligent way to run support.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-24">
+      <div class="relative">
+        <div
+          class="absolute hidden md:block w-96 h-96 bg-brand/10 rounded-full right-0 top-1/3 -z-10">
+        </div>
+        <div
+          class="absolute hidden md:block w-44 h-44 bg-brand/10 rounded-full left-10 top-1/4 -z-10">
+        </div>
+        <Picture
+          formats={["avif", "webp"]}
+          src={EmployeeImg}
+          alt="DaemonLayer Team"
+          class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
+          loading="lazy"
+        />
+      </div>
+      <div class="place-self-center">
+        <h2 class="text-5xl text-gray-800 tracking-tight -mt-2">
+          <span class="text-brand">Our</span>
+          {" "}
+          <span>Mission</span>
+        </h2>
+        <p class="text-lg max-w-xl mt-4 leading-relaxed text-slate-600">
+          Empower MSPs to orchestrate seamless automation across platforms, turning repetitive tasks into purpose-driven workflows, supporting growth, resilience and precision for their clients.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-24">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+        Meet the <span class="text-brand">Founders</span>
+      </h2>
+      <p class="text-lg mt-4 text-slate-600 text-center">
+        Kevin and Rudy bring decades of MSP and IT automation experience to DaemonLayer.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-16 mx-auto mt-12 max-w-4xl">
+      <!-- Kevin Wright -->
+      <div class="flex flex-col items-center">
+        <div class="w-64 h-64 rounded-lg overflow-hidden bg-gray-100 mb-6">
+          <Picture
+            src={KevinImg}
+            alt="Kevin Wright - Cofounder & CEO"
+            formats={["avif", "webp"]}
+            widths={[256, 512]}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="text-center">
+          <h3 class="text-2xl font-semibold text-gray-800">Kevin Wright</h3>
+          <p class="text-brand font-medium mt-1">Cofounder & CEO</p>
+          <ul class="mt-6 text-left space-y-2 text-slate-600">
+            <li class="flex items-start gap-2">
+              <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
+              <span>15+ years leading IT services companies</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
+              <span>Former Operations Director and Strategy Lead</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
+              <span>Experienced founder with a proven track record</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
+              <span>Deep domain knowledge of MSP & SME IT workflows</span>
+            </li>
+          </ul>
+          <a href="https://www.linkedin.com/in/kevinwright/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-brand hover:text-brand-dark transition">
+            <Icon name="bx:bxl-linkedin-square" class="w-5 h-5" />
+            <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Rudy Mens -->
+      <div class="flex flex-col items-center">
+        <div class="w-64 h-64 rounded-lg overflow-hidden bg-gray-100 mb-6">
+          <Picture
+            src={RudyImg}
+            alt="Rudy Mens - Cofounder & CTO"
+            formats={["avif", "webp"]}
+            widths={[256, 512]}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="text-center">
+          <h3 class="text-2xl font-semibold text-gray-800">Rudy Mens</h3>
+          <p class="text-brand font-medium mt-1">Cofounder & CTO</p>
+          <ul class="mt-6 text-left space-y-2 text-slate-600">
+            <li class="flex items-start gap-2">
+              <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
+              <span>20+ years IT specialist & consultant experience</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
+              <span>Specialised in Microsoft 365 and IT automation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
+              <span>Founder and writer of LazyAdmin.nl</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
+              <span>Recognised Microsoft MVP (2022–2026)</span>
+            </li>
+          </ul>
+          <a href="https://www.linkedin.com/in/rudymens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-brand hover:text-brand-dark transition">
+            <Icon name="bx:bxl-linkedin-square" class="w-5 h-5" />
+            <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+  <Cta />
+</Layout>

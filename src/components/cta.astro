@@ -1,0 +1,39 @@
+---
+import Link from "./ui/link.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  class="bg-gradient-to-bl from-brand to-brand-dark p-8 md:px-20 md:py-20 mt-20 flex flex-col items-center text-center">
+  <div class="mb-4">
+    <span class="text-white/70 text-sm font-semibold uppercase tracking-wider">Limited Opportunity</span>
+  </div>
+  <h2 class="text-white text-4xl md:text-6xl tracking-tight">
+    Be Part of the<br/>Founding Cohort
+  </h2>
+  <p class="text-white/80 mt-4 text-lg md:text-xl max-w-2xl">
+    We're partnering with a small group of forward-thinking MSPs who want to test and shape the future of support automation.
+  </p>
+  <div class="mt-8 grid md:grid-cols-2 gap-4 text-white/90 text-left max-w-2xl w-full">
+    <div class="flex items-start gap-3">
+      <Icon name="ph:check-circle-fill" class="w-5 h-5 mt-0.5 text-white" />
+      <span class="text-sm">Early access to the DaemonLayer platform</span>
+    </div>
+    <div class="flex items-start gap-3">
+      <Icon name="ph:check-circle-fill" class="w-5 h-5 mt-0.5 text-white" />
+      <span class="text-sm">Direct input into product design</span>
+    </div>
+    <div class="flex items-start gap-3">
+      <Icon name="ph:check-circle-fill" class="w-5 h-5 mt-0.5 text-white" />
+      <span class="text-sm">Priority onboarding for new features</span>
+    </div>
+    <div class="flex items-start gap-3">
+      <Icon name="ph:check-circle-fill" class="w-5 h-5 mt-0.5 text-white" />
+      <span class="text-sm">Pilot pricing that continues after launch</span>
+    </div>
+  </div>
+  <div class="flex flex-col items-center mt-8 gap-2">
+    <Link href="/contact" style="inverted">Apply for Early Access</Link>
+    <p class="text-white/70 text-sm mt-2">Limited to 5 MSPs only</p>
+  </div>
+</div>

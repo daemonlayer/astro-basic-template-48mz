@@ -1,11 +1,77 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import FeatureAlt from "@components/feature-alt.astro";
+import FeatureGrid from "@components/feature-grid.astro";
+import Features from "@components/features.astro";
+import Hero from "@components/hero.astro";
+// import Logos from "@components/logos.astro";
+// import Testimonials from "@components/testimonials.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout footerMargin={false}>
+  <div class="hero-wrapper">
+    <!-- Gradient Background - absolute positioned, scrolls with page -->
+    <div class="hero-gradient">
+      <div class="hero-gradient__colors"></div>
+      <div class="hero-gradient__fade"></div>
+    </div>
+
+    <Hero />
+  </div>
+
+  <Container>
+    <!-- <Logos /> -->
+    <FeatureAlt />
+  </Container>
+  <!-- <Testimonials /> -->
+  <Container>
+    <FeatureGrid />
+    <Features />
+  </Container>
+  <Cta />
 </Layout>
+
+<style>
+  .hero-wrapper {
+    position: relative;
+    margin-top: -100px;
+    padding-top: 100px;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-gradient__colors {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(at top left, #4f1d9e 30%, transparent 80%),
+      radial-gradient(at bottom, #2ab4d9 0%, transparent 60%),
+      radial-gradient(at bottom left, #06b6d4 0%, transparent 50%),
+      radial-gradient(at top right, #1d979e, transparent),
+      radial-gradient(at bottom right, #4f1d9e 0%, transparent 50%);
+    background-blend-mode: saturation;
+    opacity: 0.3;
+  }
+
+  .hero-gradient__fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72rem;
+    background: linear-gradient(to top, white, transparent);
+  }
+</style>

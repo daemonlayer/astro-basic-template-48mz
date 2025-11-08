@@ -1,22 +1,97 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource/bebas-neue";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/600.css";
+
+interface Props {
+  title?: string;
+  footerMargin?: boolean;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title, footerMargin = true } = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "DaemonLayer"
+  : "DaemonLayer - Smart Automation Platform for MSPs";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <SEO
+      title={makeTitle}
+      description="DaemonLayer - Smart Automation Platform for MSPs"
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@surjithctly",
+        site: "@web3templates",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `DaemonLayer - Smart Automation Platform for MSPs`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "DaemonLayer Screenshot",
+        },
+      }}
+    />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+      /* Remove arrows from list-style - fix for tailwindcss */
+      details > summary.list-none::-webkit-details-marker,
+      details > summary.list-none::marker {
+        display: none;
+      }
+
+      /* Custom font assignments */
+      body {
+        font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+        font-weight: 500;
+        font-size: 12pt;
+      }
+
+      h1, h2 {
+        font-family: 'Bebas Neue', cursive;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+      }
+
+      h3, h4, h5, h6 {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-weight: 600;
+      }
+    </style>
+    <!-- Enable this if you want to use Astro ViewTransitions  -->
+    <ViewTransitions />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer margin={footerMargin} />
+  </body>
+</html>

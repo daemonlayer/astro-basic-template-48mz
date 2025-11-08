@@ -1,0 +1,140 @@
+---
+import Badge from "@components/ui/badge.astro";
+import { Picture } from "astro:assets";
+import FeatureImg1 from "../assets/features/endless-ticket-queues.jpg";
+import FeatureImg2 from "../assets/features/ticket-details.png";
+import { Icon } from "astro-icon/components";
+import Link from "@components/ui/link.astro";
+
+const { nomargin } = Astro.props;
+---
+
+<div
+  class:list={[
+    "max-w-4xl mx-auto flex flex-col items-center justify-center",
+    !nomargin && "mt-24",
+  ]}>
+  <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+    MSP Support Desks Are<br/>Broken by Design
+  </h2>
+  <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    Every MSP faces the same challenges: too many tickets, not enough time, and tools that don't talk to each other.
+  </p>
+</div>
+
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center">
+    <Picture
+      src={FeatureImg1}
+      alt="Feature Image"
+      formats={["avif", "webp"]}
+      loading="lazy"
+    />
+  </div>
+
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <h3 class="text-2xl font-semibold [text-wrap:balance]">
+        The Daily Reality for MSPs
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        Modern MSPs are overwhelmed with operational challenges that prevent them from delivering excellent service.
+      </p>
+
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-start gap-3 text-neutral-800">
+          <Icon name="ph:warning-circle-fill" class="w-5 h-5 mt-0.5 text-accent" />
+          <div>
+            <span class="font-semibold text-sm">Endless Ticket Queues</span>
+            <p class="text-sm text-slate-600">Support desks drowning in repetitive requests while SLAs slip</p>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-3 text-neutral-800">
+          <Icon name="ph:warning-circle-fill" class="w-5 h-5 mt-0.5 text-accent" />
+          <div>
+            <span class="font-semibold text-sm">Reactive Support Model</span>
+            <p class="text-sm text-slate-600">Always firefighting instead of preventing issues proactively</p>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-3 text-neutral-800">
+          <Icon name="ph:warning-circle-fill" class="w-5 h-5 mt-0.5 text-accent" />
+          <div>
+            <span class="font-semibold text-sm">Technician Burnout</span>
+            <p class="text-sm text-slate-600">Teams overwhelmed by basic tasks, no time for strategic work</p>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-3 text-neutral-800">
+          <Icon name="ph:warning-circle-fill" class="w-5 h-5 mt-0.5 text-accent" />
+          <div>
+            <span class="font-semibold text-sm">Tool Fragmentation</span>
+            <p class="text-sm text-slate-600">Jumping between PSA, RMM, and documentation slows everything down</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center pb-10 md:pb-0 md:order-2">
+    <Picture
+      src={FeatureImg2}
+      alt="Feature Image"
+      formats={["avif", "webp"]}
+      loading="lazy"
+    />
+  </div>
+
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <h3 class="text-2xl font-semibold [text-wrap:balance]">
+        What We're Building
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        DaemonLayer is an automation layer built for MSPs that intelligently triages and automatically resolves repetitive first-line support tickets. It connects to your existing platforms eliminating the need to learn new software.
+      </p>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        We're starting with email, M365 and Autotask, and expanding to ConnectWise, HaloPSA, and Atera next.
+      </p>
+      <p class="mt-4 text-slate-600 font-semibold">
+        Our mission:
+      </p>
+      <ul class="grid mt-2 text-left gap-y-2">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-brand" />
+          <span class="text-sm">Streamline repetitive tickets</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-brand" />
+          <span class="text-sm">Centralise client insights</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-brand" />
+          <span class="text-sm">Automate routine actions</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5 text-brand" />
+          <span class="text-sm">Let human engineers focus where they add real value</span>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <Link href="/contact" size="sm" class="inline-flex items-center group gap-px">
+          <span>Apply for Early Access</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
+            <path
+              fill-rule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>

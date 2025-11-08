@@ -1,0 +1,75 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "../assets/dashboard-hero-image.png";
+import Link from "@components/ui/link.astro";
+import Container from "@components/container.astro";
+---
+
+<div class="relative overflow-x-clip">
+  <Container>
+    <main class="grid lg:grid-cols-2 gap-10 pt-12 pb-8 lg:pt-0 lg:pb-0 items-center relative min-h-screen">
+      <div class="max-w-xl">
+        <h1
+          class="text-4xl lg:text-5xl xl:text-6xl leading-tight text-center lg:text-start -mt-[50px]">
+          Automate Support.<br/>Simplify MSP Operations.
+        </h1>
+        <p
+          class="text-xl mt-6 max-w-xl text-slate-600 leading-relaxed text-center lg:text-start">
+          DaemonLayer is building the next generation of IT support automation - designed to reduce ticket noise, eliminate repetitive tasks, and help MSPs deliver faster, calmer service.
+        </p>
+        <div
+          class="mt-8 flex flex-col items-center lg:items-start gap-3">
+          <Link
+            href="/contact"
+            size="lg"
+            class="inline-flex gap-1 items-center justify-center">
+            Apply for Early Access
+          </Link>
+          <p class="text-sm text-slate-500 text-center lg:text-start">
+            Limited pilot onboarding • Locked 3-year pricing
+          </p>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="relative" style="filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25));">
+          <Picture
+            src={heroImage}
+            alt="DaemonLayer Platform Dashboard"
+            formats={["avif", "webp"]}
+            sizes="(max-width: 992px) 0vw, 80vw"
+            widths={[800, 1000, 1200, 1600, heroImage.width]}
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-auto rounded-lg"
+          />
+        </div>
+      </div>
+    </main>
+  </Container>
+</div>
+
+<style>
+  .hero-image {
+    display: none;
+    position: absolute;
+    height: 600px;
+    width: 80vw;
+    max-width: 1100px;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media screen and (min-width: 62em) {
+    .hero-image {
+      display: block;
+      left: 65%;
+    }
+  }
+
+  @media screen and (min-width: 80em) {
+    .hero-image {
+      left: 65%;
+    }
+  }
+</style>

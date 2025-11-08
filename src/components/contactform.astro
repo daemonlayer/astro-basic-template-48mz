@@ -1,0 +1,172 @@
+---
+import Button from "./ui/button.astro";
+---
+
+<div id="error-message" class="hidden mb-4 p-4 text-red-800 bg-red-100 rounded-md text-center">
+  <span>Your request could not be saved. Please try again.</span>
+</div>
+
+<div id="success-message" class="hidden mb-4 p-4 text-green-800 bg-green-100 rounded-md text-center">
+  <span>Your request has been sent successfully</span>
+</div>
+
+<form id="sib-form" method="POST" action="https://bad12c37.sibforms.com/serve/MUIFAC1mtz0NhM4cF_2yFo81MqiJorLiUDaUL4WTp1h6JoRcUCl9Ht63BZDW5yCk-v9lb2SlG4cHH6uLl5w7ufTSBmErlhQ-nnmF7KhEDXclu4WS7gwp4L5cMWs8YRYMt_DVno7hQ84pePET1mHHgopO5_9V0w2nx181HsxZyA4P-h6AuuNzC5xjICJRYCLLcVXRJpwWJfXcZGWkxg==" data-type="subscription">
+  <div class="mb-5">
+    <input
+      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      maxlength="200"
+      type="text"
+      id="FIRSTNAME"
+      name="FIRSTNAME"
+      autocomplete="off"
+      placeholder="First Name"
+      data-required="true"
+      required
+    />
+    <label class="entry__error entry__error--primary hidden text-red-400 text-sm mt-1"></label>
+  </div>
+
+  <div class="mb-5">
+    <input
+      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      maxlength="200"
+      type="text"
+      id="LASTNAME"
+      name="LASTNAME"
+      autocomplete="off"
+      placeholder="Last Name"
+      data-required="true"
+      required
+    />
+    <label class="entry__error entry__error--primary hidden text-red-400 text-sm mt-1"></label>
+  </div>
+
+  <div class="mb-5">
+    <input
+      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      type="text"
+      id="EMAIL"
+      name="EMAIL"
+      autocomplete="off"
+      placeholder="Email"
+      data-required="true"
+      required
+    />
+    <label class="entry__error entry__error--primary hidden text-red-400 text-sm mt-1"></label>
+  </div>
+
+  <div class="mb-5">
+    <input
+      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      maxlength="200"
+      type="text"
+      id="COMPANY"
+      name="COMPANY"
+      autocomplete="off"
+      placeholder="Company Name"
+      data-required="true"
+      required
+    />
+    <label class="entry__error entry__error--primary hidden text-red-400 text-sm mt-1"></label>
+  </div>
+
+  <div class="mb-5">
+    <input
+      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      maxlength="200"
+      type="text"
+      data-numeric="true"
+      id="MONTHLY_TICKETS"
+      name="MONTHLY_TICKETS"
+      autocomplete="off"
+      placeholder="Monthly Support Tickets (approx.)"
+      data-required="true"
+      required
+    />
+    <label class="entry__error entry__error--primary hidden text-red-400 text-sm mt-1"></label>
+  </div>
+
+  <div class="mb-5">
+    <label class="block text-sm font-semibold text-gray-800 mb-3">Current PSA System</label>
+    <div class="space-y-2">
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" name="PSA_SYSTEM[]" value="Autotask" class="w-4 h-4 text-brand border-slate-300 rounded focus:ring-brand" />
+        <span class="text-sm text-gray-800">Autotask</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" name="PSA_SYSTEM[]" value="Connectwise" class="w-4 h-4 text-brand border-slate-300 rounded focus:ring-brand" />
+        <span class="text-sm text-gray-800">Connectwise</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" name="PSA_SYSTEM[]" value="HaloPSA" class="w-4 h-4 text-brand border-slate-300 rounded focus:ring-brand" />
+        <span class="text-sm text-gray-800">HaloPSA</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" name="PSA_SYSTEM[]" value="Atera" class="w-4 h-4 text-brand border-slate-300 rounded focus:ring-brand" />
+        <span class="text-sm text-gray-800">Atera</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" name="PSA_SYSTEM[]" value="Jira" class="w-4 h-4 text-brand border-slate-300 rounded focus:ring-brand" />
+        <span class="text-sm text-gray-800">Jira</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input type="checkbox" name="PSA_SYSTEM[]" value="Freshdesk" class="w-4 h-4 text-brand border-slate-300 rounded focus:ring-brand" />
+        <span class="text-sm text-gray-800">Freshdesk</span>
+      </label>
+    </div>
+    <label class="entry__error entry__error--primary hidden text-red-400 text-sm mt-1"></label>
+  </div>
+
+  <div class="mb-5">
+    <textarea
+      rows="4"
+      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      maxlength="500"
+      id="NOTES"
+      name="NOTES"
+      autocomplete="off"
+      placeholder="Notes"
+      data-required="true"
+      required
+    ></textarea>
+    <label class="entry__error entry__error--primary hidden text-red-400 text-sm mt-1"></label>
+  </div>
+
+  <div class="mb-5">
+    <script>
+      function handleCaptchaResponse() {
+        var event = new Event('captchaChange');
+        document.getElementById('sib-captcha').dispatchEvent(event);
+        window.grecaptcha = window.turnstile;
+      }
+    </script>
+    <div class="cf-turnstile g-recaptcha" data-sitekey="0x4AAAAAAB_sVsSvwOz2X55C" id="sib-captcha" data-callback="handleCaptchaResponse" data-language="en"></div>
+    <label class="entry__error entry__error--primary hidden text-red-400 text-sm mt-1"></label>
+  </div>
+
+  <Button type="submit" size="lg" block>Submit Request</Button>
+
+  <input type="text" name="email_address_check" value="" class="hidden" style="display:none" />
+  <input type="hidden" name="locale" value="en" />
+</form>
+
+<script is:inline>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+  window.LOCALE = 'en';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+  window.INVALID_NUMBER = "The information provided is invalid. Please review the field format and try again.";
+  window.translation = {
+    common: {
+      selectedList: '{quantity} list selected',
+      selectedLists: '{quantity} lists selected',
+      selectedOption: '{quantity} selected',
+      selectedOptions: '{quantity} selected',
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

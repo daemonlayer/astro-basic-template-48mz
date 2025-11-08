@@ -1,0 +1,75 @@
+---
+import Container from "./container.astro";
+import Sectionhead from "./sectionhead.astro";
+import { ArrowIcon } from "./ui/icons";
+
+const faq = [
+  {
+    question: "What does DaemonLayer do?",
+    answer:
+      "DaemonLayer automates the triage stage of IT support tickets. It monitors your support inbox, filters out spam and sales emails, analyses incoming tickets, enriches the data, and assigns them to the right engineer or queue in Autotask — saving 5–7 minutes per ticket.",
+  },
+  {
+    question: "How is it different from rules or ticket parsers?",
+    answer:
+      "Rules are static and break easily. DaemonLayer uses AI to understand context — not just keywords — so it can handle varied wording, read attachments, and route tickets accurately even when email formats change.",
+  },
+  {
+    question: "How long does triage take?",
+    answer:
+      "Around two minutes from intake to completion. From the engineer’s perspective, it’s instant — tickets arrive already categorised, prioritised, and ready to handle.",
+  },
+  {
+    question: "Does it replace helpdesk engineers?",
+    answer:
+      "No. It removes repetitive admin work so your engineers can focus on solving issues and improving SLAs instead of reading and sorting emails.",
+  },
+  {
+    question: "Which systems does it integrate with?",
+    answer:
+      "DaemonLayer currently integrates with Autotask. ConnectWise, HaloPSA, and RMM integrations are in development.",
+  },
+  {
+    question: "How is my data handled?",
+    answer:
+      "All data is processed in secure EU-based cloud infrastructure. It’s encrypted in transit and at rest, isolated per tenant, and never used to train shared AI models.",
+  },
+  {
+    question: "What’s included in the pilot program?",
+    answer:
+      "Three months of full triage automation, onboarding and support, weekly performance insights, and lifetime pilot pricing if you continue after the trial.",
+  },
+  {
+    question: "What’s next on the roadmap?",
+    answer:
+      "Upcoming workflows include password resets, first-response automation, and onboarding/offboarding tasks. Pilot partners help shape what comes next.",
+  },
+];
+---
+
+<Container>
+  <Sectionhead>
+    <Fragment slot="title">FAQ</Fragment>
+    <Fragment slot="desc">Frequently asked questions</Fragment>
+  </Sectionhead>
+
+  <div class="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
+    {
+      faq.map((item) => (
+        <div class="py-5">
+          <details class="group">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+              <span>{item.question}</span>
+              <span class="transition group-open:rotate-180">
+                <ArrowIcon />
+              </span>
+            </summary>
+            <p class="text-neutral-600 mt-3 opacity-0 -translate-y-3 group-open:translate-y-0 group-open:opacity-100 group-open:transition-all">
+              {item.answer}
+            </p>
+          </details>
+        </div>
+      ))
+    }
+  </div>
+</Container>
