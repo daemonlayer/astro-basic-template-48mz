@@ -7,6 +7,10 @@ import Contactform from "@components/contactform.astro";
 ---
 
 <Layout title="Contact">
+  <Fragment slot="head">
+    <script is:inline src="https://api.mapbox.com/mapbox-gl-js/v3.16.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.16.0/mapbox-gl.css" rel="stylesheet" />
+  </Fragment>
   <Container>
     <Sectionhead>
       <Fragment slot="title">Contact</Fragment>
@@ -15,6 +19,7 @@ import Contactform from "@components/contactform.astro";
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
+        <div id="map" class="w-full h-[50%] rounded-xl mb-8"></div>
         <h2 class="font-medium text-2xl text-gray-800">Contact DaemonLayer</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
           Have something to say? We are here to help. 
@@ -27,18 +32,6 @@ import Contactform from "@components/contactform.astro";
               W1T 2EW, London
             </span>
           </div>
-          <!--
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
-            <a href="mailto:hello@astroship-pro.com">
-              hello@astroship-pro.com
-            </a>
-          </div>
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" />
-            <a href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a>
-          </div>
-          -->
         </div>
       </div>
       <div class="bg-slate-100 rounded-xl mb-5">
@@ -47,3 +40,58 @@ import Contactform from "@components/contactform.astro";
     </div>
   </Container>
 </Layout>
+
+<script>
+  // @ts-nocheck
+  // Initialize Mapbox
+  mapboxgl.accessToken = 'sk.eyJ1IjoiZGFlbW9ubGF5ZXIiLCJhIjoiY21pMnhrY2JmMTc0aDJscjR3eTVpZTlocCJ9.ydtVoJoiGfNYDz3RXYN5Jw';
+
+  // GeoJSON data for DaemonLayer location
+  const geojson = {
+    'type': 'Feature',
+    'geometry': {
+      'type': 'Point',
+      'coordinates': [-0.1336473, 51.5197104]
+    },
+    'properties': {
+      'description': 'DaemonLayer',
+      'title': 'DaemonLayer',
+      'address': '60 Tottenham Court Road, Camden, London, W1T 4TT, United Kingdom',
+      'status': 'OK'
+    }
+  };
+
+  // Create the map
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/daemonlayer/cmi2xltov00pd01qu89i24yw8',
+    center: geojson.geometry.coordinates,
+    zoom: 12,
+    pitch: 60, // pitch in degrees
+    bearing: 0, // bearing in degrees
+  });
+
+  // Create a custom marker element using the DaemonLayer logo
+  const el = document.createElement('div');
+  el.className = 'mapbox-marker';
+  el.style.backgroundImage = 'url(/daemonlayer-standalone.png)';
+  el.style.width = '40px';
+  el.style.height = '40px';
+  el.style.backgroundSize = 'cover';
+  el.style.borderRadius = '50%';
+  el.style.cursor = 'pointer';
+
+  // Add marker to map with popup
+  new mapboxgl.Marker(el)
+    .setLngLat(geojson.geometry.coordinates)
+    .setPopup(
+      new mapboxgl.Popup({ offset: 25 })
+        .setHTML(
+          `<h3 style="font-weight: 600; margin-bottom: 0.5rem;">${geojson.properties.title}</h3><p style="margin: 0;">${geojson.properties.address}</p>`
+        )
+    )
+    .addTo(map);
+
+  // Add navigation controls
+  map.addControl(new mapboxgl.NavigationControl());
+</script>

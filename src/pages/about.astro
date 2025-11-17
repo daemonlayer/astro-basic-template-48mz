@@ -50,9 +50,9 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       </div>
       <div class="place-self-center">
         <h2 class="text-5xl text-gray-800 tracking-tight -mt-2">
-          <span class="text-brand">Our</span>
+          <span >Our</span>
           {" "}
-          <span>Mission</span>
+          <span class="text-brand">Mission</span>
         </h2>
         <p class="text-lg max-w-xl mt-4 leading-relaxed text-slate-600">
           Empower MSPs to orchestrate seamless automation across platforms, turning repetitive tasks into purpose-driven workflows, supporting growth, resilience and precision for their clients.
@@ -82,10 +82,10 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
             loading="lazy"
           />
         </div>
-        <div class="text-center">
+        <div class="text-center flex flex-col">
           <h3 class="text-2xl font-semibold text-gray-800">Kevin Wright</h3>
           <p class="text-brand font-medium mt-1">Cofounder & CEO</p>
-          <ul class="mt-6 text-left space-y-2 text-slate-600">
+          <ul class="mt-6 text-left space-y-2 text-slate-600 flex-grow">
             <li class="flex items-start gap-2">
               <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
               <span>15+ years leading IT services companies</span>
@@ -103,7 +103,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
               <span>Deep domain knowledge of MSP & SME IT workflows</span>
             </li>
           </ul>
-          <a href="https://www.linkedin.com/in/kevinwright/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-brand hover:text-brand-dark transition">
+          <a href="https://www.linkedin.com/in/kevinwright/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-brand hover:text-brand-dark transition">
             <Icon name="bx:bxl-linkedin-square" class="w-5 h-5" />
             <span>Connect on LinkedIn</span>
           </a>
@@ -122,10 +122,10 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
             loading="lazy"
           />
         </div>
-        <div class="text-center">
+        <div class="text-center flex flex-col flex-grow">
           <h3 class="text-2xl font-semibold text-gray-800">Rudy Mens</h3>
           <p class="text-brand font-medium mt-1">Cofounder & CTO</p>
-          <ul class="mt-6 text-left space-y-2 text-slate-600">
+          <ul class="mt-6 text-left space-y-2 text-slate-600 flex-grow">
             <li class="flex items-start gap-2">
               <Icon name="ph:check" class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" />
               <span>20+ years IT specialist & consultant experience</span>
@@ -143,7 +143,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
               <span>Recognised Microsoft MVP (2022–2026)</span>
             </li>
           </ul>
-          <a href="https://www.linkedin.com/in/rudymens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-brand hover:text-brand-dark transition">
+          <a href="https://www.linkedin.com/in/rudymens/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-auto text-brand hover:text-brand-dark transition">
             <Icon name="bx:bxl-linkedin-square" class="w-5 h-5" />
             <span>Connect on LinkedIn</span>
           </a>

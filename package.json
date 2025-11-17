@@ -1,7 +1,7 @@
 {
   "name": "--force",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -19,7 +19,7 @@
     "@iconify-json/fluent": "^1.1.47",
     "@iconify-json/ph": "^1.1.10",
     "@iconify-json/uil": "^1.1.8",
-    "astro": "^5.14.8",
+    "astro": "^5.15.8",
     "astro-feather-icons": "^1.0.2",
     "astro-icon": "^1.0.4",
     "astro-navbar": "^2.3.9",
