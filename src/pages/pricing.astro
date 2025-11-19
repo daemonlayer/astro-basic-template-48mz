@@ -15,15 +15,15 @@ const plans: Plan[] = [
     popular: false,
     features: [
       "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
+      "Up to 800 Tickets",
+      "Ticket Triage",
+      "Password Reset Workflow",
+      "MFA Reset Workflow",
       "Basic Integrations",
-      "Community Support",
     ],
     button: {
       text: "Get Started",
-      link: "/",
+      link: "/contact",
     },
   },
   {
@@ -34,15 +34,13 @@ const plans: Plan[] = [
     color: "orange",
     features: [
       "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
+      "Up to 1500 Tickets",
       "Advanced Integrations",
       "Priority Support",
     ],
     button: {
       text: "Get Started",
-      link: "#",
+      link: "/contact",
     },
   },
   {
@@ -53,11 +51,10 @@ const plans: Plan[] = [
     color: "purple",
     features: [
       "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
+      "Up to 3000 Tickets",
+      "SSO Integration",
       "Dedicated Account Manager",
-      "24/7 Phone Support",
+      "Phone Support",
     ],
     button: {
       text: "Contact us",
@@ -79,7 +76,7 @@ const plans: Plan[] = [
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
       {plans.map((item) => <PricingComponent plan={item} />)}
     </div>
-    <ComparePricing />
+    <!--<ComparePricing />-->
     <Faq />
   </Container>
 </Layout>

@@ -28,10 +28,10 @@ export type Plan = {
 };
 ---
 
-<div>
+<div class="h-full">
   <div
     class:list={[
-      "flex flex-col w-full order-first lg:order-none border py-5 px-6 relative rounded-lg",
+      "flex flex-col h-full w-full order-first lg:order-none border py-5 px-6 relative rounded-lg",
       plan.popular
         ? "  border-orange-500 shadow-lg shadow-orange-50"
         : " border-neutral-200 shadow-sm",
@@ -61,7 +61,7 @@ export type Plan = {
         }
       </p>
 
-      <p class="mt-3 text-sm text-neutral-500">{plan.desc}</p>
+      <!--<p class="mt-3 text-sm text-neutral-500">{plan.desc}</p>-->
     </div><ul class="grid mt-8 text-left gap-y-4">
       {
         plan.features.map((item) => (
@@ -72,7 +72,7 @@ export type Plan = {
           </li>
         ))
       }
-    </ul><div class="flex mt-8">
+    </ul><div class="flex-1"></div><div class="flex mt-8">
       <Link
         href={plan.button.link || "#"}
         block
