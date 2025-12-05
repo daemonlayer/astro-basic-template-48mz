@@ -2,7 +2,7 @@
 layout: ../layouts/MdLayout.astro
 title: "Privacy Policy"
 author: "DaemonLayer"
-date: "08 Nov 2025"
+date: "5  2025"
 ---
 
 At DaemonLayer, we value your privacy and take data protection seriously.  
@@ -54,16 +54,21 @@ By using DaemonLayer, you consent to the practices described below.
 
 5.3. Security incidents, if any, are handled under strict response procedures.
 
-## 6. Your Rights
+## 6. ICO Registration
 
-6.1. You may request access, correction, or deletion of your personal data.
+DaemonLayer Ltd is registered with the UK Information Commissioner’s Office (ICO) under registration number **ZC054896**.  
+This registration covers all personal data processed for our business activities, including newsletter and support ticket information.
 
-6.2. Requests can be made by contacting **privacy@daemonlayer.com**.
+## 7. Your Rights
 
-## 7. Updates to this Policy
+7.1. You may request access, correction, or deletion of your personal data.
 
-7.1. We may update this Privacy Policy periodically. The revised version will be posted on this page with a new “Last Updated” date.
+7.2. Requests can be made by contacting **privacy@daemonlayer.com**.
 
-## 8. Contact
+## 8. Updates to this Policy
+
+8.1. We may update this Privacy Policy periodically. The revised version will be posted on this page with a new “Last Updated” date.
+
+## 9. Contact
 
 If you have questions about this policy or our data handling practices, contact us at **privacy@daemonlayer.com**.
