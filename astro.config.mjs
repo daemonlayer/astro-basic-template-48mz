@@ -9,4 +9,7 @@ import icon from "astro-icon";
 export default defineConfig({
     site: "https://daemonlayer.com",
     integrations: [tailwind(), mdx(), icon(), sitemap()],
+    experimental: {
+        csp: true
+    }
 });
