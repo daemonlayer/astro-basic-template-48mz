@@ -10,7 +10,6 @@ export default defineConfig({
     integrations: [tailwind(), mdx(), icon(), sitemap()],
     experimental: {
         csp: {
-            mode: "nonce", // Use nonces for inline scripts/styles
             directives: {
                 "default-src": ["'self'"],
                 "script-src": [
