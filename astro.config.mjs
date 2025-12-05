@@ -10,33 +10,29 @@ export default defineConfig({
     integrations: [tailwind(), mdx(), icon(), sitemap()],
     experimental: {
         csp: {
-            directives: [
-                {
-                    "default-src": ["'self'"],
-                    "script-src": [
-                        "'self'",
-                        "https://sibforms.com",
-                        "https://api.mapbox.com"
-                    ],
-                    "style-src": [
-                        "'self'",
-                        "https://fonts.googleapis.com",
-                        "https://sibforms.com"
-                    ],
-                    "font-src": [
-                        "'self'",
-                        "https://fonts.gstatic.com"
-                    ],
-                    "img-src": [
-                        "'self'",
-                        "data:",
-                        "https://api.mapbox.com"
-                    ],
-                    "worker-src": [
-                        "'self'",
-                        "blob:"
-                    ]
-                }
+            "default-src": ["'self'"],
+            "script-src": [
+                "'self'",
+                "https://sibforms.com",
+                "https://api.mapbox.com"
+            ],
+            "style-src": [
+                "'self'",
+                "https://fonts.googleapis.com",
+                "https://sibforms.com"
+            ],
+            "font-src": [
+                "'self'",
+                "https://fonts.gstatic.com"
+            ],
+            "img-src": [
+                "'self'",
+                "data:",
+                "https://api.mapbox.com"
+            ],
+            "worker-src": [
+                "'self'",
+                "blob:"
             ]
         }
     }
